@@ -17,6 +17,7 @@ var nodemailer = require('nodemailer');
  * @property {(string || string[])} options.files
  * @property {string} options.from
  * @property {string} options.to
+ * @property {string} options.senderName
  * @property {string} options.replyTo
  * @property {string} options.text
  * @property {string} options.html
@@ -99,7 +100,7 @@ var GMailSend = function(options) {
 
     // from
 
-    options.from = prepareAddress(options.from, options.from); // adjust to nodemailer format
+    options.from = prepareAddress(options.senderName, options.from); // adjust to nodemailer format
 
     // to
 
